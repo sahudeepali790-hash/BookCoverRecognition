@@ -53,12 +53,12 @@ python main.py
 # Project Structure
 
 
-bc:\Users\sahud\OneDrive\Desktop\BookCoverRecognition\
-├── book_recognizer.py    # Main recognition system class
-├── README.md             # Project documentation
-└── database/             # Database directory (created automatically)
-    ├── metadata.json     # Book metadata storage
-    └── *.jpg             # Book cover images
+BookCoverRecognition/
+├── book_recognizer.py        # Main recognition system class and CLI interface
+├── README.md                 # Project documentation
+└── database/                 # Book cover database (auto-created at runtime)
+    ├── metadata.json         # Stores book IDs, names, image paths
+    └── <book_id>.jpg         # Stored book cover images
 
 
 # How It Works
