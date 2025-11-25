@@ -52,13 +52,14 @@ python main.py
 
 # Project Structure
 
-
+```
 BookCoverRecognition/
 ├── book_recognizer.py        # Main recognition system class and CLI interface
 ├── README.md                 # Project documentation
 └── database/                 # Book cover database (auto-created at runtime)
     ├── metadata.json         # Stores book IDs, names, image paths
     └── <book_id>.jpg         # Stored book cover images
+```
 
 
 # How It Works
