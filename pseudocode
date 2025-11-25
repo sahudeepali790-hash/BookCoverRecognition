@@ -1,0 +1,33 @@
+BEGIN
+    LOAD dataset_folder
+    dataset_features = EMPTY_LIST
+    FOR each image IN dataset_folder DO
+        img = READ(image)
+        keypoints, descriptors = ORB_FEATURE_EXTRACT(img)
+        ADD (image_name, descriptors) TO dataset_features
+    END FOR
+    query = READ(query_image)
+    q_keypoints, q_descriptors = ORB_FEATURE_EXTRACT(query)
+    best_match_name = NONE
+    best_score = 0
+    FOR each (image_name, descriptors) IN dataset_features DO
+        score = 0
+        FOR each desc_q IN q_descriptors DO
+            min_distance = INFINITY
+            FOR each desc_d IN descriptors DO
+                distance = COMPUTE_HAMMING(desc_q, desc_d)
+                IF distance < min_distance THEN
+                    min_distance = distance
+               ENDIF
+            END FOR
+            IF min_distance < THRESHOLD THEN
+                INCREMENT score
+            ENDIF
+        END FOR
+        IF score > best_score THEN
+            best_score = score
+            best_match_name = image_name
+        ENDIF
+    END FOR
+    PRINT "Recognized Book: ", best_match_name
+END
