@@ -53,13 +53,12 @@ python main.py
 # Project Structure
 
 
-book-cover-recognition/
-├── main.py              # Main recognition system
-├── requirements.txt     # Python dependencies
-├── README.md           # This file
-└── database/           # Database directory (created automatically)
-    ├── metadata.json   # Book metadata
-    └── *.jpg          # Book cover images
+bc:\Users\sahud\OneDrive\Desktop\BookCoverRecognition\
+├── book_recognizer.py    # Main recognition system class
+├── README.md             # Project documentation
+└── database/             # Database directory (created automatically)
+    ├── metadata.json     # Book metadata storage
+    └── *.jpg             # Book cover images
 
 
 # How It Works
@@ -93,5 +92,4 @@ if result:
 - Keep it simple: This is a basic implementation for educational purposes
 - Works best with clear, high-contrast book cover images
 - Adjust threshold parameter for sensitivity
-
 - Database is stored locally in JSON format
