@@ -93,4 +93,5 @@ if result:
 - Keep it simple: This is a basic implementation for educational purposes
 - Works best with clear, high-contrast book cover images
 - Adjust threshold parameter for sensitivity
+
 - Database is stored locally in JSON format
